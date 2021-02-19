@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <title>Artur Nurdinov</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<head>
+    <img src="avatar.jpg" alt="Зображення">
+    <p>Cześć ,jestem Artur</p>
+</head>
+<body>
+    <div class="btn">
+        <button id="b1"> Хоббі </button>
+<br>
+<br>
+<br>
+        <button id="b2"> Плейлист </button>
+    
+<br>
+<br>
+<br>
+        <button id="b4"> Домашня сторінка </button>
+    
+
+    </div>
+
+    <div class="content">
+       <p> Jestem łucznikiem</p>
+       <p> I  chodzę na siłownię</p>
+       <img src="1.jpg">
+
+    </div>
+    <div class="content2">
+       <input type="text" placeholder="Номер" id="i1">
+       <input type="text" placeholder="Назва треку" id="i2">
+       <input type="submit" id="i3">
+        <div class="list">
+
+        </div>
+ </div>
+
+<div class="content4">
+   <p> Cześć, mam na imię Artur </p>
+   <p> Jestem studentem Uniwersytetu Łódzkiego </p>
+    
+</div>
+
+
+</body>
+  
+ <script>
+     let a = document.querySelector('.content')
+     let b = document.querySelector('#b1')
+     let a1 = document.querySelector('.content2')
+     let b1 = document.querySelector('#b2')
+     let a3 = document.querySelector('.content4')
+     let b3 = document.querySelector('#b4')
+     b.addEventListener('click', ()=> { a.style.display = 'block'
+     a1.style.display = 'none'
+     a3.style.display = 'none'
+})
+    
+
+     b1.addEventListener('click', ()=> { a1.style.display = 'block'
+     a.style.display = 'none'
+     a3.style.display = 'none'
+})
+
+
+    b3.addEventListener('click', ()=> { a3.style.display = 'block'
+     a.style.display = 'none'
+     a1.style.display = 'none'
+     
+})
+
+
+ </script>
+ <script>
+  let c = document.querySelector('#i3')
+  let f = document.querySelector('.list')
+  let newArray = [];
+
+  function Display(a){
+    let e = `<table border="1px" width="100%" cellpadding="2">
+        <tr> 
+            <td> Номер </td> 
+            <td> Виконавець  </td> 
+                   
+             </tr>
+        </table>`;
+    a.forEach((item, i)=> {
+        e += `<table id='myTable' border="1px" width="100%" cellpadding="1">
+        <tr> 
+            <td> ${item.name} </td> 
+            <td> ${item.track}  </td> 
+            
+            
+        </tr>
+        </table>`
+        f.innerHTML = e;
+        
+    })
+  }
+    
+  c.addEventListener('click', ()=> { 
+    let d = document.querySelector('#i1')
+    let g = document.querySelector('#i2')
+    let obj = {
+      name :d.value ,
+      track :g.value
+  }
+    newArray.push (obj);
+    Display(newArray)
+
+})
+
+</script>
+
+</html>
